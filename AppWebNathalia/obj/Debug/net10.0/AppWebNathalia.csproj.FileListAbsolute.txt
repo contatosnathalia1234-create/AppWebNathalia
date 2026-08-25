@@ -1,8 +1,0 @@
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\EmbeddedAttribute.cs
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\ValidatableTypeAttribute.cs
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\rpswa.dswa.cache.json
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\AppWebNathalia.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\AppWebNathalia.AssemblyInfoInputs.cache
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\AppWebNathalia.AssemblyInfo.cs
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\AppWebNathalia.csproj.CoreCompileInputs.cache
-C:\Users\2024102020043\source\repos\AppWebNathalia\obj\Debug\net10.0\AppWebNathalia.MvcApplicationPartsAssemblyInfo.cache
