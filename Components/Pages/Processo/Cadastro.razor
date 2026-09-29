@@ -1,0 +1,69 @@
+﻿@page "/processos/cadastro"
+@rendermode InteractiveServer
+@using AppWebNathalia.DAO
+@using AppWebNathalia.Model
+@inject ProcessoDAO dao
+@inject NavigationManager NavigationManager
+
+<PageTitle>Novo Processo - Sistema de Controle de Processos</PageTitle>
+
+<h2 class="fw-bold mb-4">Cadastro de Processo</h2>
+
+<EditForm Model="processo" OnValidSubmit="Salvar">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="mb-3">
+        <label class="form-label">Número</label>
+        <InputText class="form-control" @bind-Value="processo.Numero" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Data</label>
+        <InputDate class="form-control" @bind-Value="processo.Data" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Situação</label>
+        <InputSelect class="form-select" @bind-Value="processo.Situacao">
+            <option value="Aberto">Aberto</option>
+            <option value="Em análise">Em análise</option>
+            <option value="Pendente">Pendente</option>
+            <option value="Concluído">Concluído</option>
+            <option value="Arquivado">Arquivado</option>
+        </InputSelect>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Interessado</label>
+        <InputText class="form-control" @bind-Value="processo.Interessado" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Assunto</label>
+        <InputText class="form-control" @bind-Value="processo.Assunto" />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Descrição</label>
+        <InputTextArea class="form-control" @bind-Value="processo.Descricao" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+        Salvar
+    </button>
+
+    <a href="/processos" class="btn btn-secondary ms-2">
+        Cancelar
+    </a>
+</EditForm>
+
+@code {
+    private Processo processo = new();
+
+    private void Salvar()
+    {
+        dao.Inserir(processo);
+        NavigationManager.NavigateTo("/processos");
+    }
+}

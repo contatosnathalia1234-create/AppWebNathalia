@@ -2,6 +2,7 @@ using AppWebNathalia.Configs;
 using AppWebNathalia.Components;
 using AppWebNathalia.DAO;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddRazorComponents()
