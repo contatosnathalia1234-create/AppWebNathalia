@@ -1,4 +1,9 @@
 ﻿@page "/processos"
+@using AppWebNathalia.DAO
+@using AppWebNathalia.Model
+@inject ProcessoDAO dao
+
+<PageTitle>Processos - Sistema de Controle de Processos</PageTitle>
 
 <div class="d-flex justify-content-between align-items-center mb-4">
     <div>
@@ -11,3 +16,50 @@
         </a>
     </div>
 </div>
+
+@if (processos.Count == 0)
+{
+    <div class="alert alert-info">
+        Nenhum processo cadastrado.
+    </div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="table-dark">
+                <tr>
+                    <th>Número</th>
+                    <th>Data</th>
+                    <th>Interessado</th>
+                    <th>Assunto</th>
+                    <th>Situação</th>
+                    <th>Descrição</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var processo in processos)
+                {
+                    <tr>
+                        <td>@processo.Numero</td>
+                        <td>@processo.Data?.ToString("dd/MM/yyyy")</td>
+                        <td>@processo.Interessado</td>
+                        <td>@processo.Assunto</td>
+                        <td>@processo.Situacao</td>
+                        <td>@processo.Descricao</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
+@code {
+    private List<Processo> processos = new();
+
+    protected override void OnInitialized()
+    {
+        processos = dao.Listar();
+    }
+}
